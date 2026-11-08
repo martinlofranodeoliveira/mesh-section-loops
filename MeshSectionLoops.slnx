@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MeshSectionLoops.Cli/MeshSectionLoops.Cli.csproj" />
+    <Project Path="src/MeshSectionLoops/MeshSectionLoops.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MeshSectionLoops.Tests/MeshSectionLoops.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Setup .NET
+        uses: actions/setup-dotnet@3951f0dfe7a07e2313ec93c75700083e2005c680
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build solution
+        run: dotnet build MeshSectionLoops.sln
+      - name: Run test suite
+        run: dotnet run --project tests/MeshSectionLoops.Tests/MeshSectionLoops.Tests.csproj --no-build
+      - name: Run demo assertion
+        run: dotnet run --project src/MeshSectionLoops.Cli/MeshSectionLoops.Cli.csproj --no-build -- demo --assert
+      - name: Run demo JSON
+        run: dotnet run --project src/MeshSectionLoops.Cli/MeshSectionLoops.Cli.csproj --no-build -- demo --json

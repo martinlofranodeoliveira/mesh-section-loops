@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Exact mesh-plane section SDK for small oriented triangular surfaces.</Description>
+    <PackageId>MeshSectionLoops</PackageId>
+  </PropertyGroup>
+</Project>

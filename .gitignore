@@ -1,0 +1,7 @@
+[Bb]in/
+[Oo]bj/
+build/
+TestResults/
+*.user
+*.suo
+*.log
